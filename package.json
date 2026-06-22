@@ -1,0 +1,19 @@
+{
+  "name": "ci-cd-blog",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "server": "npm start --prefix server",
+    "client": "npm start --prefix client",
+    "install-all": "npm install --prefix client && npm install --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
