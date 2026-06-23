@@ -1,4 +1,4 @@
-import { useState, useEffect ,useRef } from 'react'
+import React,{ useState, useEffect ,useRef } from 'react'
 import Blog from './components/Blog'
 import loginService from './services/login'
 import blogService from './services/blogs'
@@ -19,7 +19,7 @@ const App = () => {
         const sortedBlogs = blogs.sort((a, b) => b.likes - a.likes)
         setBlogs(sortedBlogs)
       } catch (error) {
-        setErrorMessage('Failed to fetch blogs')
+        setErrorMessage('Failed to fetch blogs', error.message)
       }
     }
     if (user) {
@@ -54,6 +54,7 @@ const App = () => {
       setErrorMessage('')
     } catch (error) {
       setErrorMessage('Invalid username or password')
+      console.error("error ocurred", error)
       setTimeout(() => {
         setErrorMessage(null)
       }, 5000)
@@ -80,7 +81,7 @@ const App = () => {
       setBlogs(blogs.filter(blog => blog.id !== id))
       setSuccessMessage('Blog deleted successfully')
     } catch (error) {
-      setErrorMessage('Failed to delete blog')
+      setErrorMessage('Failed to delete blog', error.message)
     }
   }
   const updateLikes = async (id, updatedBlog) => {

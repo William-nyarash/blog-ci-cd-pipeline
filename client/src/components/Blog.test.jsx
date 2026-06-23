@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Blog from '../components/Blog'
 import { expect, test,vi } from 'vitest'
-import { use } from 'react'
+import React from 'react'
 
 test('renders blog and author', () => {
   const blog = {
@@ -13,6 +13,7 @@ test('renders blog and author', () => {
   }
 
   const updateLikes = vi.fn()
+  /* eslint-disable no-unused-vars */
   const deleteBlog = vi.fn()
   render(<Blog blog={blog} updateLikes={updateLikes} />)
 
