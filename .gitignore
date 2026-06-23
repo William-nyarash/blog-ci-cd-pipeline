@@ -1,1 +1,7 @@
 node_modules/
+<<<<<<< HEAD
+=======
+
+# Lint
+.lint/tmp/
+>>>>>>> 64f6835 (fix)
