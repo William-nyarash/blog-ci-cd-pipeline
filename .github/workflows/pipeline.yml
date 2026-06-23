@@ -21,7 +21,11 @@ jobs:
         run: npm run install-all 
 
       - name: run lint
+<<<<<<< HEAD
         run: npm run lint --prefix client
+=======
+        run: npm run eslint --prefix client
+>>>>>>> 64f6835 (fix)
 
       - name: run test
         run: npm test --prefix client
